@@ -1,0 +1,13 @@
+{
+  "name": "<%= projectName %>",
+  "description": "A miniprogram project based on vest.",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "regenerator-runtime": "^0.12.1"
+  },
+  "devDependencies": {
+    "vest": "../vest",
+    "weui-wxss": "^1.1.1"
+  }
+}
