@@ -7,7 +7,7 @@
     "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
-    "vest": "../vest",
+    "vest": "github:mycolorway/vest#master",
     "weui-wxss": "^1.1.1"
   }
 }
