@@ -24,9 +24,8 @@
     "url": "https://github.com/mycolorway/vest/issues"
   },
   "homepage": "https://github.com/mycolorway/vest#readme",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.1.2",
-    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-stage-2": "^7.0.0",
     "del": "^3.0.0",
@@ -46,5 +45,8 @@
     "rollup-plugin-commonjs": "^9.1.8",
     "rollup-plugin-node-resolve": "^3.4.0",
     "undertaker-registry": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0"
   }
 }

@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/index/index"
   ],
   "window": {
-    "navigationBarTitleText": "<%= capitalProjectName %>",
+    "navigationBarTitleText": "<%= capitalProjectName %>"
   }
 }
