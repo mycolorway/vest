@@ -1,2 +1,2 @@
 # <%= projectName %>
-A miniprogram project based on vest.
+A wechat miniprogram project based on vest.
