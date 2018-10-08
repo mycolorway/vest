@@ -15,7 +15,7 @@
 首先，把 vest 作为 global package 安装：
 
 ```bash
-npm i -g vest
+npm i -g @mycolorway/vest
 ```
 
 创建新的 vest 项目：
@@ -112,7 +112,7 @@ vest 会自动将所有的 `*.scss` 文件编译为 `*.wxss` 文件。
 
 ### npm 支持
 
-关于 npm 支持，请参考官方文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html。
+关于 npm 支持，请参考官方文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html
 
 vest 只是对“构建 npm”操作做了自动化处理。
 
