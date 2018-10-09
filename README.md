@@ -8,6 +8,7 @@
 * 使用新版本 babel 编译 es6 代码，支持 babel/presets-env 中定义的所有高级语法，包括异步函数（async function）
 * 支持使用 sass 编写小程序样式，并且可以引入 npm 依赖中的第三方样式
 * 自动构建小程序的 miniprogram_npm 文件夹，不需要在开发者工具上手动点“构建 npm”
+* 允许在所有文件中使用相对于小程序代码根目录的相对路径，例如：`import request from '@/modules/request'`
 * 子项目 [vest-pocket](https://github.com/mycolorway/vest-pocket) 提供了一些实用的 module
 
 ### 使用方法
