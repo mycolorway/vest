@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "regenerator-runtime": "^0.12.1"
+    "regenerator-runtime": "^0.12.1",
+    "@mycolorway/vest-pocket": "^0.0.1"
   },
   "devDependencies": {
     "weui-wxss": "^1.1.1"

@@ -1,7 +1,7 @@
 {
   "name": "@mycolorway/vest",
   "version": "0.0.1",
-  "description": "A lightweight framework for wechat miniprogram development.",
+  "description": "A lightweight toolkit for enhancing wechat miniprogram development.",
   "main": "index.js",
   "bin": {
     "vest": "bin/vest.js"

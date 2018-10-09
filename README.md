@@ -1,6 +1,6 @@
 # vest
 
-一个轻量级的微信小程序开发框架。
+一个微信小程序的开发增强工具。
 
 顾名思义，vest 就像官方开发者工具的贴身小马甲，在原汁原味保留官方开发体验的基础上，提供了这些好处：
 
@@ -8,7 +8,7 @@
 * 使用新版本 babel 编译 es6 代码，支持 babel/presets-env 中定义的所有高级语法，包括异步函数（async function）
 * 支持使用 sass 编写小程序样式，并且可以引入 npm 依赖中的第三方样式
 * 自动构建小程序的 miniprogram_npm 文件夹，不需要在开发者工具上手动点“构建 npm”
-* 子项目 [vest-pocket](https://github.com/mycolorway/vest-pocket) 提供了一些实用的 module 和自定义组件
+* 子项目 [vest-pocket](https://github.com/mycolorway/vest-pocket) 提供了一些实用的 module
 
 ### 使用方法
 
@@ -118,4 +118,8 @@ vest 只是对“构建 npm”操作做了自动化处理。
 
 ### vest-pocket
 
-TODO
+[vest-pocket](https://github.com/mycolorway/vest-pocket) 是对小程序官方框架的补充，提供了官方框架缺少的一些实用 module：
+
+* wxAPI：对微信小程序的接口做了封装，让异步接口返回 Promise
+* Page：对默认的页面构造方法做了封装，让页面可以像自定义组件那样支持 behavior 扩展，并且完美支持页面生命周期函数
+* Store：借鉴 Vuex.Store，在小程序中实现应用状态管理
