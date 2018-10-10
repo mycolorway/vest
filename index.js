@@ -37,19 +37,21 @@ program.command('create <projectName>')
 program.command('build')
   .description('build the vest project in current working directory.')
   .option('-e, --env [env]', 'Build project in specified environment, default is [production]', 'production')
+  .option('-w, --watch', 'Watch file changes after building')
   .action((cmd) => {
     runTask(cmd._name, Object.assign({}, config, {
       env: cmd.env,
+      watch: cmd.watch,
       projectName: getVestProjectConfig().projectname
     }))
   })
 
 program.command('dev')
-  .description('build the vest project in current working directory and then watch file changes for development.')
-  .option('-e, --env [env]', 'Build project in specified environment, default is [development]', 'development')
+  .description('build the vest project in development env and then watch file changes.')
   .action((cmd) => {
-    runTask(cmd._name, Object.assign({}, config, {
-      env: cmd.env,
+    runTask('build', Object.assign({}, config, {
+      env: 'development',
+      watch: true,
       projectName: getVestProjectConfig().projectname
     }))
   })

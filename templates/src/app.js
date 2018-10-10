@@ -22,7 +22,7 @@ App({
       })
 
       updateManager.onUpdateFailed(() => {
-        wx.hideLoading())
+        wx.hideLoading()
         wx.showModal({
           title: '新版本下载失败',
           content: '请检查你的网络状况，然后重启小程序。',
