@@ -1,4 +1,4 @@
-import {wxAPI} from '@mycolorway/vest-pocket'
+import {wx} from '@mycolorway/vest-pocket'
 
 App({
   onLaunch() {
@@ -6,11 +6,11 @@ App({
   },
 
   checkUpdate() {
-    const updateManager = wxAPI('getUpdateManager')
+    const updateManager = wx.getUpdateManager()
     if (updateManager) {
       updateManager.onCheckForUpdate(res => {
         if (res.hasUpdate) {
-          wxAPI('showLoading', {
+          wx.showLoading({
             title: '正在下载新版本',
             mask: true
           })
@@ -22,8 +22,8 @@ App({
       })
 
       updateManager.onUpdateFailed(() => {
-        wxAPI('hideLoading')
-        wxAPI('showModal', {
+        wx.hideLoading())
+        wx.showModal({
           title: '新版本下载失败',
           content: '请检查你的网络状况，然后重启小程序。',
           showCancel: false

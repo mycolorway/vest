@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "regenerator-runtime": "^0.12.1",
-    "@mycolorway/vest-pocket": "^0.0.1"
+    "@mycolorway/vest-pocket": "^0.0.2"
   },
   "devDependencies": {
     "weui-wxss": "^1.1.1"

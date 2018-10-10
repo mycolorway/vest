@@ -121,6 +121,6 @@ vest 只是对“构建 npm”操作做了自动化处理。
 
 [vest-pocket](https://github.com/mycolorway/vest-pocket) 是对小程序官方框架的补充，提供了官方框架缺少的一些实用 module：
 
-* wxAPI：对微信小程序的接口做了封装，让异步接口返回 Promise
+* wx：对微信小程序的接口做了封装，让异步接口返回 Promise
 * Page：对默认的页面构造方法做了封装，让页面可以像自定义组件那样支持 behavior 扩展，并且完美支持页面生命周期函数
 * Store：借鉴 Vuex.Store，在小程序中实现应用状态管理
