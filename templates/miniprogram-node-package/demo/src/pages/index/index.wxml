@@ -1,1 +1,1 @@
-<view><%= capitalProjectName %></view>
+<view>{{ projectName }}</view>
