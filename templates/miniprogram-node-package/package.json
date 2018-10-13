@@ -1,0 +1,23 @@
+{
+  "name": "<%= projectName %>",
+  "description": "A miniprogram node package based on vest.",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vest dev",
+    "build": "vest build",
+    "test": "jest"
+  },
+  "jest": {
+    "testMatch": ["test/**/*.js"],
+    "collectCoverageFrom": ["src/**/*.js"],
+    "moduleDirectories": ["node_modules", "src"]
+  },
+  "dependencies": {
+    "regenerator-runtime": "^0.12.1",
+    "@mycolorway/vest-pocket": "^0.0.3"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "weui-wxss": "^1.1.1"
+  }
+}

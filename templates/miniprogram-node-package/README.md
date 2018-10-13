@@ -1,0 +1,41 @@
+# <%= projectName %>
+A wechat miniprogram project based on [vest](https://github.com/mycolorway/vest).
+
+## Development
+
+1. Install [vest](https://github.com/mycolorway/vest) globally first if it has not been installed yet:
+
+```bash
+npm i -g vest
+```
+
+2. Install project dependencies:
+
+```bash
+npm i
+```
+
+3. Build project:
+
+```bash
+vest dev
+```
+
+4. Use wechat miniprogram dev tool open the `miniprogram_dev` directory.
+
+
+## Test
+
+1. Write test code in `test/` directory,
+
+2. Run tests:
+
+```bash
+npm test
+```
+
+Or if you want to get coverage reports:
+
+```bash
+npm test -- --coverage
+```
