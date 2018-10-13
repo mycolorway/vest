@@ -1,5 +1,5 @@
 import './utils/mock-api'
-import {wx} from 'vest-pocket'
+import {wx} from '@mycolorway/vest-pocket'
 
 test('wx.getSystemInfo', async () => {
   const {errMsg} = await wx.getSystemInfo()

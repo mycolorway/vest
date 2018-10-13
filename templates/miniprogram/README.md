@@ -24,11 +24,11 @@ vest build
 3. Use wechat miniprogram dev tool open the project root.
 
 
-## Test
+## Unit Test
 
 1. Write test code in `test/` directory,
 
-2. Run tests with Jest:
+2. Run tests with [Jest](https://jestjs.io/):
 
 ```bash
 vue test

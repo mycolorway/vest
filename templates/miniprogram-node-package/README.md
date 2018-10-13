@@ -1,5 +1,5 @@
 # <%= projectName %>
-A wechat miniprogram project based on [vest](https://github.com/mycolorway/vest).
+A wechat miniprogram node package project based on [vest](https://github.com/mycolorway/vest).
 
 ## Development
 
@@ -9,33 +9,27 @@ A wechat miniprogram project based on [vest](https://github.com/mycolorway/vest)
 npm i -g vest
 ```
 
-2. Install project dependencies:
-
-```bash
-npm i
-```
-
-3. Build project:
+2. Build project:
 
 ```bash
 vest dev
 ```
 
-4. Use wechat miniprogram dev tool open the `miniprogram_dev` directory.
+3. Use wechat miniprogram dev tool open the `demo` directory.
 
 
-## Test
+## Unit Test
 
 1. Write test code in `test/` directory,
 
-2. Run tests:
+2. Run tests with [Jest](https://jestjs.io/):
 
 ```bash
-npm test
+vest test
 ```
 
 Or if you want to get coverage reports:
 
 ```bash
-npm test -- --coverage
+vest test --coverage
 ```

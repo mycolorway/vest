@@ -1,12 +1,6 @@
 import './utils/mock-api'
-import {wx} from 'vest-pocket'
 
-test('wx.getSystemInfo', async () => {
-  const {errMsg} = await wx.getSystemInfo()
-  expect(errMsg).toBe('getSystemInfo:ok')
-})
-
-test('wx.getSystemInfoSync', async () => {
+test('wx.getSystemInfoSync', () => {
   const {SDKVersion} = wx.getSystemInfoSync()
   expect(SDKVersion).toBe('2.3.0')
 })

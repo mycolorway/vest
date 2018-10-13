@@ -61,4 +61,5 @@ typings/
 .next
 
 .DS_Store
-dist
+miniprogram_dist
+demo/dist

@@ -4,11 +4,14 @@
 
 顾名思义，vest 就像官方开发者工具的贴身小马甲，在原汁原味保留官方开发体验的基础上，提供了这些好处：
 
+* 同时支持小程序项目和[小程序 npm 包](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)项目
 * 支持在项目文件中插入环境变量，按环境编译小程序（基于 dotenv）
-* 使用新版本 babel 编译 es6 代码，支持 babel/presets-env 中定义的所有高级语法，包括异步函数（async function）
-* 支持使用 sass 编写小程序样式，并且可以引入 npm 依赖中的第三方样式
+* 支持 @babel/presets-env 中定义的所有高级语法，包括异步函数（async function）
+* 支持使用 sass 编写小程序样式，并且可以引入 npm 包中的第三方样式
 * 自动构建小程序的 miniprogram_npm 文件夹，不需要在开发者工具上手动点“构建 npm”
 * 允许在所有文件中使用相对于小程序代码根目录的相对路径，例如：`import request from '@/modules/request'`
+* 支持 ESLint
+* 支持编写 js 单元测试（基于 [Jest](https://jestjs.io)）
 * 子项目 [vest-pocket](https://github.com/mycolorway/vest-pocket) 提供了一些实用的 module
 
 ### 使用方法
@@ -25,15 +28,10 @@ npm i -g @mycolorway/vest
 vest create tower
 ```
 
-安装新项目的依赖：
+进入项目根目录，编译 vest 项目，编译之前会自动安装项目依赖：
 
 ```bash
-cd tower && npm i
-```
-
-编译 vest 项目：
-
-```bash
+cd tower
 vest build
 ```
 
@@ -43,7 +41,7 @@ vest build
 vest dev
 ```
 
-最后用微信开发者工具打开 vest 项目根目录。
+最后用微信开发者工具打开 vest 项目根目录（如果是小程序 npm 项目，需要打开根目录里的 `demo` 文件夹）。
 
 更多关于 vest command 和 options 的使用方法可以参考：
 
@@ -124,3 +122,5 @@ vest 只是对“构建 npm”操作做了自动化处理。
 * wx：对微信小程序的接口做了封装，让异步接口返回 Promise
 * Page：对默认的页面构造方法做了封装，让页面可以像自定义组件那样支持 behavior 扩展，并且完美支持页面生命周期函数
 * Store：借鉴 Vuex.Store，在小程序中实现应用状态管理
+
+通过 vest 创建的小程序项目，会自动将 `vest-pocket` 添加为项目依赖。
