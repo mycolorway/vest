@@ -13,7 +13,7 @@
     "regenerator-runtime": "^0.12.1"
   },
   "devDependencies": {
-    "@mycolorway/vest": "^0.0.5",
+    "@mycolorway/vest": "^0.0.6",
     "weui-wxss": "^1.1.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@mycolorway/vest",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A lightweight toolkit for enhancing wechat miniprogram development.",
   "main": "index.js",
   "bin": {
@@ -9,6 +9,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "bin",
+    "lib",
+    "templates",
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mycolorway/vest.git"
