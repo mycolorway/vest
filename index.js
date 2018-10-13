@@ -1,68 +1,11 @@
-const fs = require('fs')
-const path = require('path')
 const program = require('commander')
-const gulp = require('gulp')
 const packageConfig = require('./package')
-const config = require('./lib/config')
-const _ = require('lodash')
-
-function runTask(name, config) {
-  const TaskRegistry = require(`./lib/tasks/${name}`)
-  gulp.registry(new TaskRegistry(config))
-  gulp.task(name)()
-}
-
-function getVestProjectConfig() {
-  const projectConfigPath = path.resolve(config.cwd, 'project.config.json')
-  if (!fs.existsSync(projectConfigPath) || !fs.existsSync(config.srcPath)) {
-    console.error(`please make sure current working directory is a vest project.`)
-    process.exit(1)
-  }
-
-  return require(projectConfigPath)
-}
 
 program.version(packageConfig.version, '-v --version')
   .usage('[command] [options]')
 
-program.command('create <projectName>')
-  .description('create a new vest project named <projectName> in current directory.')
-  .action((projectName, cmd) => {
-    runTask(cmd._name, Object.assign({}, config, {
-      projectName,
-      capitalProjectName: _.upperFirst(_.camelCase(projectName))
-    }))
-  })
-
-program.command('build')
-  .description('build the vest project in current working directory.')
-  .option('-e, --env [env]', 'Build project in specified environment, default is [production]', 'production')
-  .option('-w, --watch', 'Watch file changes after building')
-  .action((cmd) => {
-    runTask(cmd._name, Object.assign({}, config, {
-      env: cmd.env,
-      watch: cmd.watch,
-      projectName: getVestProjectConfig().projectname
-    }))
-  })
-
-program.command('dev')
-  .description('build the vest project in development env and then watch file changes.')
-  .action((cmd) => {
-    runTask('build', Object.assign({}, config, {
-      env: 'development',
-      watch: true,
-      projectName: getVestProjectConfig().projectname
-    }))
-  })
-
-program.command('*', { noHelp: true })
-  .action(() => {
-    program.help()
-  })
+require('./lib/commands')
 
 program.parse(process.argv)
 
-if (!process.argv.slice(2).length) {
-  program.help()
-}
+if (!process.argv.slice(2).length) program.help()

@@ -1,0 +1,8 @@
+{
+  "name": "<%= projectName %>-demo",
+	"description": "A demo for development",
+  "private": true,
+  "dependencies": {
+    "regenerator-runtime": "^0.12.1"
+  }
+}

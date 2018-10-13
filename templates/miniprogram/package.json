@@ -3,11 +3,17 @@
   "description": "A miniprogram project based on vest.",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "dev": "vest dev",
+    "build": "vest build",
+    "test": "vest test"
+  },
   "dependencies": {
     "regenerator-runtime": "^0.12.1",
     "@mycolorway/vest-pocket": "^0.0.3"
   },
   "devDependencies": {
+    "@mycolorway/vest": "^0.0.5",
     "weui-wxss": "^1.1.1"
   }
 }

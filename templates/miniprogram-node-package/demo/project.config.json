@@ -1,0 +1,17 @@
+{
+	"description": "A demo for development",
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "touristappid",
+	"projectname": "<%= projectName %>-demo",
+	"miniprogramRoot": "dist/",
+	"condition": {}
+}
