@@ -13,7 +13,7 @@
     "@mycolorway/vest-pocket": "^0.0.3"
   },
   "devDependencies": {
-    "@mycolorway/vest": "^0.0.6",
+    "@mycolorway/vest": "^0.0.7",
     "weui-wxss": "^1.1.1"
   }
 }
