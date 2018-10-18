@@ -1,4 +1,4 @@
-import {wx} from '@mycolorway/vest-pocket'
+import { wx } from '@mycolorway/vest-pocket'
 
 App({
   onLaunch() {

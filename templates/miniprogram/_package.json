@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "regenerator-runtime": "^0.12.1",
-    "@mycolorway/vest-pocket": "^0.0.3"
+    "@mycolorway/vest-pocket": "^0.1.0"
   },
   "devDependencies": {
-    "@mycolorway/vest": "^0.0.8",
+    "@mycolorway/vest": "^0.0.9",
     "weui-wxss": "^1.1.1"
   }
 }
