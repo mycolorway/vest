@@ -1,6 +1,6 @@
 {
   "name": "@mycolorway/vest",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "A lightweight toolkit for enhancing wechat miniprogram development.",
   "main": "index.js",
   "bin": {
@@ -41,7 +41,7 @@
     "dotenv": "^6.1.0",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
-    "gulp-better-rollup": "^3.3.0",
+    "gulp-better-rollup": "^3.4.0",
     "gulp-eslint": "^5.0.0",
     "gulp-if": "^2.0.2",
     "gulp-plumber": "^1.2.0",
