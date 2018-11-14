@@ -20,6 +20,7 @@ module.exports = {
     'Behavior': true,
     'wx': true,
     'getCurrentPages': true,
+    'getApp': true
   },
   'rules': {}
 }
