@@ -6,7 +6,7 @@ A wechat miniprogram project based on [vest](https://github.com/mycolorway/vest)
 1. Install [vest](https://github.com/mycolorway/vest) globally first if it has not been installed yet:
 
 ```bash
-npm i -g vest
+npm i -g @mycolorway/vest
 ```
 
 2. Build project:
@@ -31,11 +31,11 @@ vest build
 2. Run tests with [Jest](https://jestjs.io/):
 
 ```bash
-vue test
+vest test
 ```
 
 Or if you want to get coverage reports:
 
 ```bash
-vue test --coverage
+vest test --coverage
 ```
