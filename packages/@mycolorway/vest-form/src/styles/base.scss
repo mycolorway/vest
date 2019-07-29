@@ -1,0 +1,72 @@
+@import './variables';
+
+.vest-form-input {
+  display: block;
+  position: relative;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1rpx solid $border-color;
+    color: $border-color;
+    left: 15px;
+  }
+
+  &:first-child:before {
+    display: none;
+  }
+}
+
+.vest-form-input__error {
+  margin-left: 15px;
+  padding: 10rpx 15rpx 10rpx 0;
+  font-size: 28rpx;
+  color: $red-color;
+}
+
+.vest-form-input__readonly {
+  justify-content: flex-end;
+  text-align: right;
+  padding-right: 30rpx;
+  width: 100%;
+  color: $lighter-grey-color;
+}
+
+.vest-form-input__error-message {
+  margin: 40rpx 40rpx 0;
+  padding:  15rpx 20rpx;
+  background-color: $red-color;
+  border-radius: 6rpx;
+  color: $white-color;
+  font-size: 14px;
+}
+
+vest-form {
+  button, .button, vest-form-button {
+    margin-bottom: 20rpx;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.weui-label {
+  &.required:after {
+    content: "＊";
+    font-weight: bolder;
+    color: $red-color;
+    margin-left: 0.2em;
+    font-size: 28rpx;
+  }
+
+  &.weui-label_title {
+    min-height: 0;
+    padding: 0;
+    margin: 0 0 20rpx 0;
+  }
+}

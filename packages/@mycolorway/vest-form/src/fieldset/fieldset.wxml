@@ -1,0 +1,8 @@
+<view class="weui-cells__title" wx:if="{{ label && !withItemsInput }}">{{ label }}</view>
+<view wx:if="{{ withItemsInput }}">
+  <slot></slot>
+</view>
+<view class="weui-cells{{ label ? ' weui-cells_after-title' : '' }}" wx:else>
+  <slot></slot>
+</view>
+<view class="weui-cells__tips" wx:if="{{ bottomHint }}">{{ bottomHint }}</view>

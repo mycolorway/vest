@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "vest-form": "@mycolorway/vest-form",
+    "vest-form-button": "@mycolorway/vest-form/button/button",
+    "vest-form-fieldset": "@mycolorway/vest-form/fieldset/fieldset",
+    "vest-form-string-input": "@mycolorway/vest-form/inputs/string/string",
+    "vest-form-boolean-input": "@mycolorway/vest-form/inputs/boolean/boolean",
+    "vest-form-date-input": "@mycolorway/vest-form/inputs/date/date",
+    "vest-form-month-input": "@mycolorway/vest-form/inputs/month/month",
+    "vest-form-time-input": "@mycolorway/vest-form/inputs/time/time",
+    "vest-form-number-input": "@mycolorway/vest-form/inputs/number/number",
+    "vest-form-select-input": "@mycolorway/vest-form/inputs/select/select",
+    "vest-form-text-input": "@mycolorway/vest-form/inputs/text/text",
+    "another-string-input": "@/components/another-string-input/another-string-input"
+  }
+}

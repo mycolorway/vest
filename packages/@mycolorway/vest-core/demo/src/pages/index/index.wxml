@@ -1,0 +1,4 @@
+<view>name: {{ name }}</view>
+<view>childName: {{ childName }}</view>
+<view>info: {{ info }}</view>
+<view>test: {{ test }}</view>

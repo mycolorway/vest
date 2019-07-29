@@ -1,0 +1,60 @@
+{
+  "name": "@mycolorway/vest-cli",
+  "version": "1.0.0",
+  "description": "A lightweight tool to improve wechat miniprogram development experience.",
+  "main": "index.js",
+  "bin": {
+    "vest": "bin/vest.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "templates",
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mycolorway/vest.git",
+    "directory": "packages/@mycolorway/vest-cli"
+  },
+  "keywords": [
+    "wechat",
+    "miniprogram",
+    "build"
+  ],
+  "author": "farthinker <farthinker@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mycolorway/vest/issues"
+  },
+  "homepage": "https://github.com/mycolorway/vest#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "commander": "^2.20.0",
+    "del": "^4.1.1",
+    "dotenv": "^8.0.0",
+    "gulp": "^4.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-template": "^5.0.0",
+    "inquirer": "^6.3.1",
+    "jest": "^24.8.0",
+    "lodash": "^4.17.11",
+    "node-sass-package-importer": "^5.3.1",
+    "rollup": "^1.11.3",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "undertaker-registry": "^1.0.1"
+  }
+}

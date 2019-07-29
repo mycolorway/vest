@@ -1,0 +1,15 @@
+{
+  "name": "<%= projectName %>",
+  "description": "A miniprogram node package based on vest.",
+  "version": "0.0.1",
+  "main": "miniprogram_dist/index.js",
+  "files": ["src", "miniprogram_dist"],
+  "scripts": {
+    "dev": "vest dev",
+    "build": "vest build",
+    "test": "vest test"
+  },
+  "dependencies": {
+    "@mycolorway/vest-core": "^<%= version %>"
+  }
+}

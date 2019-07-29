@@ -1,0 +1,7 @@
+<slot name="inputs"></slot>
+
+<view class="vest-form-input__error-message" wx:if="{{ errorMessage }}">{{ errorMessage }}</view>
+
+<view class="weui-btn-area" wx:if="{{ showButtons }}">
+  <slot name="buttons"></slot>
+</view>

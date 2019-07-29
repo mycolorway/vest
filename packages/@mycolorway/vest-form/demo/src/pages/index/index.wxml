@@ -1,0 +1,21 @@
+<vest-form bind:submit="onSubmit" id="demo-form">
+  <view slot="inputs">
+    <view class="weui-cells">
+      <vest-form-string-input name="name" class="vest-form-input" label="姓名" placeholder="请输入姓名" value="哈哈哈" required></vest-form-string-input>
+      <another-string-input name="englishName" class="vest-form-input" label="英文名" placeholder="请输入英文名" value="hahaha"></another-string-input>
+    </view>
+    <vest-form-fieldset name="personalInfo" label="个人信息">
+      <vest-form-boolean-input name="married" class="vest-form-input" label="已婚" value="{{ true }}"></vest-form-boolean-input>
+      <vest-form-date-input name="birthday" class="vest-form-input" label="生日" value="2018-10-20" display-format="yyyy-MM-dd ccc"></vest-form-date-input>
+      <vest-form-month-input name="birthdayMonth" class="vest-form-input" label="生日月份" value="2018-10"></vest-form-month-input>
+      <vest-form-time-input name="birthdayTime" class="vest-form-input" label="生日时间" ></vest-form-time-input>
+      <vest-form-number-input name="age" class="vest-form-input" label="年龄" suffix="岁"></vest-form-number-input>
+      <vest-form-select-input name="favoriteColor" class="vest-form-input" label="喜欢的颜色" collection="{{ ['red', 'yellow', 'blue'] }}" clearable="{{ false }}" value="red"></vest-form-select-input>
+      <vest-form-text-input name="comment" class="vest-form-input" label="备注" placeholder="随便写" focus="{{ true }}"></vest-form-text-input>
+    </vest-form-fieldset>
+  </view>
+  <view slot="buttons">
+    <vest-form-button>提交</vest-form-button>
+    <button bind:tap="toggleErrors">显示/隐藏错误信息</button>
+  </view>
+</vest-form>

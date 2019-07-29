@@ -1,0 +1,31 @@
+{
+	"name": "@mycolorway/vest-core",
+	"version": "1.0.0",
+	"description": "Some missing modules for wechat miniprogram development.",
+	"main": "miniprogram_dist/index.js",
+	"scripts": {
+		"dev": "vest dev",
+		"build": "vest build",
+		"test": "vest test"
+	},
+	"files": [
+		"src",
+		"miniprogram_dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:mycolorway/vest.git",
+		"directory": "packages/@mycolorway/vest-core"
+	},
+	"author": "farthinker@gmail.com",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@babel/core": "^7.5.5",
+		"@babel/plugin-transform-modules-commonjs": "^7.5.0",
+		"@babel/preset-env": "^7.5.5",
+		"@mycolorway/weui-wxss": "^1.1.1"
+	}
+}

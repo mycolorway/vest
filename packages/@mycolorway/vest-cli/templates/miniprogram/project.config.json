@@ -1,0 +1,17 @@
+{
+	"description": "A miniprogram project based on vest.",
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.7",
+	"appid": "touristappid",
+	"projectname": "<%= projectName %>",
+	"miniprogramRoot": "dist/",
+	"condition": {}
+}

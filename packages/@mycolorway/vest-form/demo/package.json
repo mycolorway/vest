@@ -1,0 +1,8 @@
+{
+  "name": "vest-form-demo",
+  "description": "A demo for development",
+  "private": true,
+  "dependencies": {
+    "@mycolorway/vest-core": "^1.0.0"
+  }
+}

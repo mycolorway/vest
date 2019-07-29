@@ -1,0 +1,17 @@
+<view class="weui-cell weui-cell_input">
+  <view class="weui-cell__hd">
+    <view class="weui-label {{ required ? 'required' : '' }} {{ error ? 'error' : '' }}">{{ label }}</view>
+  </view>
+  <view class="weui-cell__bd">
+    <input type="{{ decimal ? 'digit' : 'number' }}" class="weui-input"
+      value="{{ value }}" disabled="{{ disabled || readonly }}"
+      placeholder="{{ readonly ? '' : placeholder }}" bindinput="onInput" />
+  </view>
+  <view class="weui-cell__ft" wx:if="{{ suffix }}">
+    <view class="suffix">{{ suffix }}</view>
+  </view>
+</view>
+
+<view class="vest-form-input__error" wx:if="{{ error && error.message }}">
+  {{ error.message }}
+</view>

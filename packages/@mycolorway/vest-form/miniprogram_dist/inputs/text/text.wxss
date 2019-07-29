@@ -1,0 +1,13 @@
+.weui-cell {
+  display: block; }
+
+.weui-textarea {
+  height: 150rpx;
+  min-height: 48rpx;
+  line-height: 48rpx; }
+
+.text-readonly {
+  white-space: pre-line;
+  color: #9b9b9b; }
+  .text-readonly:first-line {
+    line-height: 0; }

@@ -1,0 +1,13 @@
+<view class="weui-cell weui-cell_input">
+  <view class="weui-cell__hd" wx:if="{{ label }}">
+    <view class="weui-label {{ required ? 'required' : '' }} {{ error ? 'error' : '' }}">{{ label }}</view>
+  </view>
+  <view class="weui-cell__bd">
+    <input class="weui-input" value="{{ value }}" disabled="{{ disabled || readonly }}"
+      placeholder="{{ readonly ? '' : placeholder }}" bindinput="onInput" />
+  </view>
+</view>
+
+<view class="vest-form-input__error" wx:if="{{ error && error.message }}">
+  {{ error.message }}
+</view>

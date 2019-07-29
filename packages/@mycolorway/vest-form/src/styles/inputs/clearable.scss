@@ -1,0 +1,23 @@
+.clear-input {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .clear-icon {
+    width: 38rpx;
+    height: 38rpx;
+  }
+}
+
+.weui-select.clearable {
+  padding-right: 88rpx;
+
+  &:before {
+    display: none;
+  }
+}

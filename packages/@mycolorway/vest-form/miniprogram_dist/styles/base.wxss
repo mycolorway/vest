@@ -1,0 +1,54 @@
+@charset "UTF-8";
+.vest-form-input {
+  display: block;
+  position: relative; }
+  .vest-form-input:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1rpx solid #dfdfdf;
+    color: #dfdfdf;
+    left: 15px; }
+  .vest-form-input:first-child:before {
+    display: none; }
+
+.vest-form-input__error {
+  margin-left: 15px;
+  padding: 10rpx 15rpx 10rpx 0;
+  font-size: 28rpx;
+  color: #ff7755; }
+
+.vest-form-input__readonly {
+  justify-content: flex-end;
+  text-align: right;
+  padding-right: 30rpx;
+  width: 100%;
+  color: #9b9b9b; }
+
+.vest-form-input__error-message {
+  margin: 40rpx 40rpx 0;
+  padding: 15rpx 20rpx;
+  background-color: #ff7755;
+  border-radius: 6rpx;
+  color: #ffffff;
+  font-size: 14px; }
+
+vest-form button, vest-form .button, vest-form vest-form-button {
+  margin-bottom: 20rpx; }
+  vest-form button:last-child, vest-form .button:last-child, vest-form vest-form-button:last-child {
+    margin-bottom: 0; }
+
+.weui-label.required:after {
+  content: "＊";
+  font-weight: bolder;
+  color: #ff7755;
+  margin-left: 0.2em;
+  font-size: 28rpx; }
+
+.weui-label.weui-label_title {
+  min-height: 0;
+  padding: 0;
+  margin: 0 0 20rpx 0; }

@@ -1,0 +1,18 @@
+<view class="weui-cell weui-cell_switch">
+  <view class="weui-cell__bd">
+    <view class="weui-label {{ required ? 'required' : '' }} {{ error ? 'error' : '' }}">
+      {{ label }}
+    </view>
+    <view class="badge {{ badgeColor }}" wx:if="{{ badgeText }}">
+      {{ badgeText }}
+    </view>
+  </view>
+  <view class="weui-cell__ft">
+    <switch checked="{{ value }}" disabled="{{ disabled || readonly }}" color="#55bb33"
+      type="{{ switch ? 'switch' : 'checkbox' }}" bindchange="onChange" />
+  </view>
+</view>
+
+<view class="vest-form-input__error" wx:if="{{ error && error.message }}">
+  {{ error.message }}
+</view>

@@ -1,0 +1,26 @@
+<view class="weui-cell weui-cell_select">
+  <view class="weui-cell__hd weui-cell__hd_in-select-after">
+    <view class="weui-label {{ required ? 'required' : '' }} {{ error ? 'error' : '' }}">{{ label }}</view>
+  </view>
+  <view class="weui-cell__bd">
+    <block wx:if="{{ readonly }}">
+      <view class="vest-form-input__readonly" wx:if="{{ displayValue }}">{{ displayValue }}</view>
+    </block>
+    <block wx:else>
+      <picker mode="date" value="{{ value }}"
+        disabled="{{ disabled || readonly }}" bindchange="onChange">
+        <view class="weui-select weui-select_in-select-after{{ clearable && !!value ? ' clearable' : '' }}">
+          <view wx:if="{{ displayValue }}">{{ displayValue }}</view>
+          <view class="input-placeholder" wx:else>{{ placeholder }}</view>
+        </view>
+      </picker>
+      <view class="clear-input" bind:tap="onReset" wx:if="{{ clearable && !!value }}">
+        <image src="@/assets/icons/cross-grey.svg" class="clear-icon" />
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="vest-form-input__error" wx:if="{{ error && error.message }}">
+  {{ error.message }}
+</view>
