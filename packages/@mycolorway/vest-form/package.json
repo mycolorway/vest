@@ -1,7 +1,7 @@
 {
   "name": "@mycolorway/vest-form",
   "description": "A miniprogram form component based on vest.",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "main": "miniprogram_dist/index.js",
   "scripts": {
     "dev": "vest dev",
@@ -15,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:mycolorway/vest.git",
-		"directory": "packages/@mycolorway/vest-form"
+    "directory": "packages/@mycolorway/vest-form"
   },
   "author": "farthinker@gmail.com",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@mycolorway/vest-core": "^1.0.0",
+    "@mycolorway/vest-core": "^1.0.0-beta.1",
     "luxon": "^1.4.3"
   }
 }

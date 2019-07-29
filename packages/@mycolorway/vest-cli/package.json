@@ -1,6 +1,6 @@
 {
   "name": "@mycolorway/vest-cli",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "A lightweight tool to improve wechat miniprogram development experience.",
   "main": "index.js",
   "bin": {
