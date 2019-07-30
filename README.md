@@ -95,7 +95,7 @@ vest 会自动将所有的 `*.scss` 文件编译为 `*.wxss` 文件。
 
 /*= import 'styles/base' */
 
-@import '~weui-wxss/dist/style/weui.wxss';
+@import '~@mycolorway/weui-wxss/dist/style/weui.wxss';
 ```
 
 会被编译为：
