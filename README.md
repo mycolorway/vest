@@ -13,8 +13,8 @@
 * 支持 ESLint
 * 支持编写 js 单元测试（基于 [Jest](https://jestjs.io)）
 * vest-core/wx 对微信小程序的接口做了封装，让异步接口返回 Promise，配合 vest 可以支持 async/await 语法
-* vest-core/Store 借鉴 Vuex.Store，在小程序中实现应用状态管理
 * vest-core/reactivity 提供了跟 Vue 类似的响应式开发方案
+* vest-core/store 借鉴 Vuex.Store，在小程序中实现应用状态管理
 * vest-form 基于 vest-core 的表单组件开发框架
 
 ### 使用方法
