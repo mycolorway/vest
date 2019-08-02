@@ -18,21 +18,19 @@ module.exports = function(gulp) {
     if (!fs.existsSync(modulePath)) return result
 
     const taskName = `${this.config.name}:npm-${dependencyName}`
-    const mpDistPath = getMiniprogramDistPath(modulePath)
-    if (mpDistPath && fs.existsSync(mpDistPath)) {
-      gulp.task(taskName, () => {
-        this.log(`start compiling ${dependencyName} files...`)
+    gulp.task(taskName, (done) => {
+      this.log(`start compiling ${dependencyName} files...`)
+
+      const mpDistPath = getMiniprogramDistPath(modulePath)
+      if (mpDistPath && fs.existsSync(mpDistPath)) {
         return gulp.src(path.join(mpDistPath, '**/*'))
           .pipe(gulp.dest(path.join(this.config.distPath, 'miniprogram_npm', dependencyName)))
           .on('finish', () => this.log(`finish compiling ${dependencyName} package files.`))
-      })
-      result.push(taskName)
-    } else {
-      const dependencyConfig = require(path.resolve(modulePath, 'package.json'))
-      const entryFilePath = require.resolve(path.resolve(modulePath, dependencyConfig.main || 'index.js'))
-      if (fs.existsSync(entryFilePath)) {
-        gulp.task(taskName, () => {
-          this.log(`start compiling ${dependencyName} files...`)
+      } else {
+        const dependencyConfig = require(path.resolve(modulePath, 'package.json'))
+        const entryFilePath = require.resolve(path.resolve(modulePath, dependencyConfig.main || 'index.js'))
+
+        if (fs.existsSync(entryFilePath)) {
           return gulp.src(entryFilePath)
             .pipe(gulpPlumber())
             .pipe(gulpRollup({
@@ -60,10 +58,14 @@ module.exports = function(gulp) {
             }))
             .pipe(gulp.dest(path.join(this.config.distPath, 'miniprogram_npm', dependencyName)))
             .on('finish', () => this.log(`finish compiling ${dependencyName} package files.`))
-        })
-        result.push(taskName)
+        } else {
+          this.log(`finish compiling ${dependencyName} package files.`)
+          done()
+        }
       }
-    }
+    });
+
+    result.push(taskName)
     return result
   }, [])
 
