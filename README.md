@@ -22,7 +22,7 @@ vest 就像官方开发者工具的贴身小马甲，在原汁原味保留官方
 首先，把 vest 作为 global package 安装：
 
 ```bash
-npm i -g @mycolorway/vest
+npm i -g @mycolorway/vest-cli
 ```
 
 创建新的 vest 项目：
