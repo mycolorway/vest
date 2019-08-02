@@ -31,11 +31,11 @@ vest build
 2. Run tests with [Jest](https://jestjs.io/):
 
 ```bash
-vue test
+vest test
 ```
 
 Or if you want to get coverage reports:
 
 ```bash
-vue test --coverage
+vest test --coverage
 ```

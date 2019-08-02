@@ -31,19 +31,26 @@ function sassProjectImporter(config) {
   }
 }
 
-function resolveDependencies(cwd, modulePath = cwd) {
-  const packageConfig = require(path.resolve(modulePath, 'package.json'))
-  if (packageConfig.name === '@mycolorway/vest-core') return {}
-  const dependencyNames = packageConfig.dependencies ? Object.keys(packageConfig.dependencies) : []
+const dependencyIgnores = [
+  '@babel/core',
+  '@babel/plugin-transform-modules-commonjs',
+  '@babel/preset-env',
+  '@mycolorway/weui-wxss',
+];
 
+function resolveDependencies(cwd, modulePath = cwd) {
+  const packageConfig = require(path.resolve(modulePath, 'package.json'));
+  const dependencyNames = packageConfig.dependencies ? Object.keys(packageConfig.dependencies) : [];
+  
   return dependencyNames.reduce((dependencies, dependencyName) => {
-    const modulePath = path.resolve(cwd, 'node_modules', dependencyName)
+    if (dependencyIgnores.includes(dependencyName)) return dependencies;
+    const modulePath = path.resolve(cwd, 'node_modules', dependencyName);
     return Object.assign(dependencies, {
-      [dependencyName]: modulePath
-    }, resolveDependencies(cwd, modulePath))
-  }, {})
+      [dependencyName]: modulePath,
+    }, resolveDependencies(cwd, modulePath));
+  }, {});
 }
 
 module.exports = {
-  log, template, resolvePath, sassProjectImporter, resolveDependencies
+  log, template, resolvePath, sassProjectImporter, resolveDependencies,
 }

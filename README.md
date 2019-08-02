@@ -1,8 +1,8 @@
 # vest
 
-一个微信小程序的开发增强工具。
+微信小程序的开发增强工具。
 
-顾名思义，vest 就像官方开发者工具的贴身小马甲，在原汁原味保留官方开发体验的基础上，提供了这些好处：
+vest 就像官方开发者工具的贴身小马甲，在原汁原味保留官方开发体验的基础上，提供了这些好处：
 
 * 同时支持小程序项目和[小程序 npm 包](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)项目
 * 支持在项目文件中插入环境变量，按环境编译小程序（基于 dotenv）
@@ -12,10 +12,10 @@
 * 允许在所有文件中使用相对于小程序代码根目录的相对路径，例如：`import request from '@/modules/request'`
 * 支持 ESLint
 * 支持编写 js 单元测试（基于 [Jest](https://jestjs.io)）
-* vest-core/wx 对微信小程序的接口做了封装，让异步接口返回 Promise，配合 vest 可以支持 async/await 语法
+* vest-core/wx 对微信小程序的接口做了封装，让异步接口返回 Promise，可以配合 async/await 语法使用
 * vest-core/reactivity 提供了跟 Vue 类似的响应式开发方案
-* vest-core/store 借鉴 Vuex.Store，在小程序中实现应用状态管理
-* vest-form 基于 vest-core 的表单组件开发框架
+* vest-core/store 借鉴 Vuex.Store，小程序的应用状态管理方案
+* vest-form 基于 vest-core 的小程序表单组件库
 
 ### 使用方法
 
