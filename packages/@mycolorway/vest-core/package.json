@@ -26,6 +26,7 @@
 		"@babel/core": "^7.5.5",
 		"@babel/plugin-transform-modules-commonjs": "^7.5.0",
 		"@babel/preset-env": "^7.5.5",
-		"@mycolorway/weui-wxss": "^1.1.1"
+		"@mycolorway/weui-wxss": "^1.1.1",
+		"regenerator-runtime": "^0.13.3"
 	}
 }
