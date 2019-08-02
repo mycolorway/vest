@@ -12,10 +12,10 @@ vest 就像官方开发者工具的贴身小马甲，在原汁原味保留官方
 * 允许在所有文件中使用相对于小程序代码根目录的相对路径，例如：`import request from '@/modules/request'`
 * 支持 ESLint
 * 支持编写 js 单元测试（基于 [Jest](https://jestjs.io)）
-* vest-core/wx 对微信小程序的接口做了封装，让异步接口返回 Promise，可以配合 async/await 语法使用
-* vest-core/reactivity 提供了跟 Vue 类似的响应式开发方案
-* vest-core/store 借鉴 Vuex.Store，小程序的应用状态管理方案
-* vest-form 基于 vest-core 的小程序表单组件库
+* [vest-core](https://github.com/mycolorway/vest/tree/master/packages/%40mycolorway/vest-core)/wx 对微信小程序的接口做了封装，让异步接口返回 Promise，可以配合 async/await 语法使用
+* [vest-core](https://github.com/mycolorway/vest/tree/master/packages/%40mycolorway/vest-core)/reactivity 提供了跟 Vue 类似的响应式开发方案
+* [vest-core](https://github.com/mycolorway/vest/tree/master/packages/%40mycolorway/vest-core)/store 借鉴 Vuex.Store，小程序的应用状态管理方案
+* [vest-form](https://github.com/mycolorway/vest/tree/master/packages/%40mycolorway/vest-form) 基于 vest-core 的小程序表单组件库
 
 ### 使用方法
 
