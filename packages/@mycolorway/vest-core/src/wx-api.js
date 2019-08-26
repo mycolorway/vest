@@ -52,7 +52,9 @@ class WxCallError extends Error {
 
 function proxyAPI (from, to, excludeApis) {
   Object.keys(from).forEach(api => {
-    if (excludeApis.indexOf(api) === -1) {
+    if (/Sync$/.test(name) || excludeApis.indexOf(api) > -1) {
+      to[api] = from[api]
+    } else {
       to[api] = (options = {}, ...otherArgs) => new Promise((resolve, reject) => {
         from[api](Object.assign(options, {
           success(...args) {
@@ -63,8 +65,6 @@ function proxyAPI (from, to, excludeApis) {
           }
         }), ...otherArgs)
       })
-    } else {
-      to[api] = from[api]
     }
   })
 }
