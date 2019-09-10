@@ -5,6 +5,8 @@ const gulpPlumber = require('gulp-plumber')
 const sassPackageImporter = require('node-sass-package-importer')
 const {template, sassProjectImporter, resolvePath} = require('../utils')
 
+gulpSass.compiler = require('node-sass');
+
 module.exports = function(gulp) {
   gulp.task(`${this.config.name}:sass`, () => {
     this.log(`start compiling scss files...`)
