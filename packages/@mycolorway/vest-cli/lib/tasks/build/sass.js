@@ -3,6 +3,7 @@ const gulpRename = require('gulp-rename')
 const gulpReplace = require('gulp-replace')
 const gulpPlumber = require('gulp-plumber')
 const sassPackageImporter = require('node-sass-package-importer')
+const sassInlineImage = require('sass-inline-image')
 const {template, sassProjectImporter, resolvePath} = require('../utils')
 
 gulpSass.compiler = require('node-sass');
@@ -20,7 +21,10 @@ module.exports = function(gulp) {
           sassPackageImporter({
             cwd: this.config.cwd
           })
-        ]
+        ],
+        functions: sassInlineImage({
+          base: this.config.srcPath
+        })
       }))
       .pipe(resolvePath())
       .pipe(gulpReplace(/\/\*=\s+import\s+'(.+)'\s+\*\//g, '@import \'$1\';'))
