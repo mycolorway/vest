@@ -8,6 +8,7 @@ const {template, sassProjectImporter, resolvePath} = require('../utils')
 gulpSass.compiler = require('node-sass');
 
 module.exports = function(gulp) {
+  const sassConfig = this.config.sass || {};
   gulp.task(`${this.config.name}:sass`, () => {
     this.log(`start compiling scss files...`)
     return gulp.src(this.sassGlobs)
@@ -20,7 +21,8 @@ module.exports = function(gulp) {
           sassPackageImporter({
             cwd: this.config.cwd
           })
-        ]
+        ],
+        functions: sassConfig.functions
       }))
       .pipe(resolvePath())
       .pipe(gulpReplace(/\/\*=\s+import\s+'(.+)'\s+\*\//g, '@import \'$1\';'))

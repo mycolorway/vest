@@ -112,6 +112,23 @@ vest 会自动将所有的 `*.scss` 文件编译为 `*.wxss` 文件。
 ...
 ```
 
+#### Sass 自定义函数
+
+可以在项目根目录创建 `vest.config.js`，然后制定 Sass 编译过程中需要使用的自定义函数：
+
+```js
+const sassInlineImage = require('sass-inline-image');
+const path = require('path');
+
+module.exports = {
+  sass: {
+    functions: sassInlineImage({
+      base: path.resolve(__dirname, 'src'),
+    }),
+  },
+};
+```
+
 ### npm 支持
 
 关于 npm 支持，请参考官方文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html

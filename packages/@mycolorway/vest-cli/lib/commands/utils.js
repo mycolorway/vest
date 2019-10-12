@@ -20,11 +20,14 @@ function getMiniprogramDistPath(cwd) {
 
 function getBuildConfig (config) {
   const packageConfig = require(path.resolve(config.cwd, 'package.json'))
+  const userConfigPath = path.resolve(config.cwd, 'vest.config.js')
+  const userConfig = fs.existsSync(userConfigPath) ? require(userConfigPath) : {};
   const buildConfig = Object.assign({}, config, {
     projectName: packageConfig.name,
+    projectVersion: packageConfig.version,
     srcPath: path.resolve(config.cwd, 'src'),
-    useESLint: fs.existsSync(path.resolve(config.cwd, '.eslintrc.js'))
-  })
+    useESLint: fs.existsSync(path.resolve(config.cwd, '.eslintrc.js')),
+  }, userConfig)
 
   if (fs.existsSync(path.resolve(config.cwd, 'project.config.json'))) {
     Object.assign(buildConfig, {
