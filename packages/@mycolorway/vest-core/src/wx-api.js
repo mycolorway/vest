@@ -6,6 +6,8 @@ const WX = {
 }
 
 const wechatSyncApis = [
+  // 生命周期
+  'getLaunchOptionsSync',
   // 网络
   'downloadFile', 'connectSocket', 'onSocketOpen', 'onSocketClose', 'onSocketMessage',
   'onSocketError', 'uploadFile',
