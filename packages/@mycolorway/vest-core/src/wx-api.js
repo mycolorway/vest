@@ -39,7 +39,9 @@ const wechatSyncApis = [
   // 地图、系统、画布
   'createMapContext', 'getSystemInfoSync', 'getExtConfigSync', 'createCanvasContext',
   // 调试、基础
-  'getLogManager', 'canIUse'
+  'getLogManager', 'canIUse',
+  // 云开发
+  'cloud'
 ]
 
 const weworkSyncApis = []
