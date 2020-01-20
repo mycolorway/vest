@@ -1,7 +1,7 @@
 {
   "name": "@mycolorway/vest-form",
   "description": "A miniprogram form component based on vest.",
-  "version": "1.0.0-beta.10",
+  "version": "1.0.0-beta.11",
   "main": "miniprogram_dist/index.js",
   "scripts": {
     "dev": "vest dev",
@@ -23,7 +23,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@mycolorway/vest-core": "^1.0.0-beta.10",
+    "@mycolorway/vest-core": "^1.0.0-beta.11",
     "luxon": "^1.4.3"
   }
 }
