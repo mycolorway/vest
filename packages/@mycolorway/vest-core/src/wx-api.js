@@ -36,6 +36,8 @@ const wechatSyncApis = [
   'getUpdateManager', 'createWorker', 'reportMonitor',
   // WXML
   'createIntersectionObserver', 'createSelectorQuery',
+  // 广告
+  'createRewardedVideoAd', 'createInterstitialAd',
   // 地图、系统、画布
   'createMapContext', 'getSystemInfoSync', 'getExtConfigSync', 'createCanvasContext',
   // 调试、基础
