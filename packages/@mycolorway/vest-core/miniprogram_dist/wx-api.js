@@ -71,7 +71,7 @@ function (_Error) {
 
 function proxyAPI(from, to, excludeApis) {
   Object.keys(from).forEach(function (api) {
-    if (/Sync$/.test(name) || excludeApis.indexOf(api) > -1) {
+    if (/Sync$/.test(api) || excludeApis.indexOf(api) > -1) {
       to[api] = from[api];
     } else {
       to[api] = function () {
