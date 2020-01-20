@@ -33,7 +33,8 @@ var WX = {
     _origin: wx.qy
   }
 };
-var wechatSyncApis = [// 网络
+var wechatSyncApis = [// 生命周期
+'getLaunchOptionsSync', // 网络
 'downloadFile', 'connectSocket', 'onSocketOpen', 'onSocketClose', 'onSocketMessage', 'onSocketError', 'uploadFile', // 媒体
 'createAudioContext', 'createInnerAudioContext', 'createCameraContext', 'createLivePusherContext', 'createLivePlayerContext', 'createVideoContext', 'onBackgroundAudioStop', 'getBackgroundAudioManager', 'onBackgroundAudioPlay', 'onBackgroundAudioPause', 'getRecorderManager', // 文件
 'getFileSystemManager', // 数据缓存
@@ -42,9 +43,11 @@ var wechatSyncApis = [// 网络
 'nextTick', 'getMenuButtonBoundingClientRect', 'createAnimation', 'onWindowResize', 'offWindowResize', // 开放接口
 'getAccountInfoSync', 'reportAnalytics', // 更新、Worker、数据上报
 'getUpdateManager', 'createWorker', 'reportMonitor', // WXML
-'createIntersectionObserver', 'createSelectorQuery', // 地图、系统、画布
+'createIntersectionObserver', 'createSelectorQuery', // 广告
+'createRewardedVideoAd', 'createInterstitialAd', // 地图、系统、画布
 'createMapContext', 'getSystemInfoSync', 'getExtConfigSync', 'createCanvasContext', // 调试、基础
-'getLogManager', 'canIUse'];
+'getLogManager', 'canIUse', // 云开发
+'cloud'];
 var weworkSyncApis = [];
 
 var WxCallError =
@@ -68,7 +71,9 @@ function (_Error) {
 
 function proxyAPI(from, to, excludeApis) {
   Object.keys(from).forEach(function (api) {
-    if (excludeApis.indexOf(api) === -1) {
+    if (/Sync$/.test(name) || excludeApis.indexOf(api) > -1) {
+      to[api] = from[api];
+    } else {
       to[api] = function () {
         var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
@@ -87,8 +92,6 @@ function proxyAPI(from, to, excludeApis) {
           })].concat(otherArgs));
         });
       };
-    } else {
-      to[api] = from[api];
     }
   });
 }
