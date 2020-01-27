@@ -1,0 +1,14 @@
+{
+  "name": "<%= projectName %>",
+  "description": "A miniprogram project based on vest.",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vest dev",
+    "build": "vest build",
+    "test": "vest test"
+  },
+  "dependencies": {
+    "@mycolorway/vest-core": "^<%= version %>"
+  }
+}

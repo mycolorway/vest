@@ -1,4 +1,4 @@
-import inputBehavior from '../behaviors/input'
+import inputBehavior from '@/inputs/behaviors/input'
 
 Component({
   behaviors: [inputBehavior],

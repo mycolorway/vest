@@ -1,0 +1,12 @@
+{
+	"description": "A demo for development",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"appid": "testappId",
+	"projectname": "<%= projectName %>"
+}

@@ -13,7 +13,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _default(config) {
   config.behaviors = (config.behaviors || []).concat([_reactivity.default]);
-  config.store = config.store || getApp().store;
+
+  var _getApp = getApp(),
+      store = _getApp.store;
+
+  config.store = config.store || (typeof store === 'function' ? store() : store);
 
   var initStore = function initStore() {
     this.store = config.store;

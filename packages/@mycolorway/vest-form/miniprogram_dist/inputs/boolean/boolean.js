@@ -1,6 +1,6 @@
 "use strict";
 
-var _input = _interopRequireDefault(require("../behaviors/input"));
+var _input = _interopRequireDefault(require("../../inputs/behaviors/input"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

@@ -3,7 +3,8 @@ import reactivityBehavior from './behaviors/reactivity'
 
 export default function (config) {
   config.behaviors = (config.behaviors || []).concat([reactivityBehavior])
-  config.store = config.store || getApp().store
+  const { store } = getApp();
+  config.store = config.store || (typeof store === 'function' ? store() : store);
 
   const initStore = function() {
     this.store = config.store

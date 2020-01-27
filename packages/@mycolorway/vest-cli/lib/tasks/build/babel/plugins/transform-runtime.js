@@ -1,7 +1,5 @@
 const { addDefault, isModule } = require('@babel/helper-module-imports')
-const { types } = require('@babel/core')
-
-module.exports = function() {
+module.exports = function({ types }) {
   return {
     pre(file) {
       const cache = new Map();

@@ -25,7 +25,7 @@ class BuildTasksRegistry extends BaseRegistry {
       gulp.watch(this.templateGlobs, gulp.task(`${this.config.name}:template`))
       gulp.watch(this.babelGlobs, gulp.task(`${this.config.name}:babel`))
       gulp.watch(this.sassGlobs, gulp.task(`${this.config.name}:sass`))
-      gulp.watch(this.fileGlobs, gulp.task(`${this.config.name}:file`))
+      gulp.watch(this.copyGlobs, gulp.task(`${this.config.name}:copy`))
       if (this.config.extraDependencies) {
         Object.entries(this.config.extraDependencies).forEach(([dependencyName, modulePath]) => {
           const mpDistPath = getMiniprogramDistPath(modulePath)
@@ -55,11 +55,11 @@ class BuildTasksRegistry extends BaseRegistry {
   }
 
   get taskNames() {
-    return ['template', 'babel', 'sass', 'file', 'npm']
+    return ['template', 'babel', 'sass', 'json', 'copy', 'npm']
   }
 
-  get fileGlobs() {
-    return this._fileGlobs = this._fileGlobs || [
+  get copyGlobs() {
+    return this._copyGlobs = this._copyGlobs || [
       path.join(this.config.srcPath, '**/*'),
       '!' + path.join(this.config.srcPath, '**/*.wxml'),
       '!' + path.join(this.config.srcPath, '**/*.json'),
@@ -68,10 +68,15 @@ class BuildTasksRegistry extends BaseRegistry {
     ]
   }
 
+  get jsonGlobs() {
+    return this._jsonGlobs = this._jsonGlobs || [
+      path.join(this.config.srcPath, '**/*.json')
+    ]
+  }
+
   get templateGlobs() {
     return this._templateGlobs = this._templateGlobs || [
       path.join(this.config.srcPath, '**/*.wxml'),
-      path.join(this.config.srcPath, '**/*.json')
     ]
   }
 

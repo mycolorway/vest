@@ -24,6 +24,7 @@ program.command('dev')
       await ensureDependenciesInstalled(demoPath)
       buildTasks.push(Object.assign({}, buildConfig, {
         name: 'build',
+        projectType: 'miniprogram',
         projectName: `${buildConfig.projectName}-demo`,
         env: 'development',
         watch: true,

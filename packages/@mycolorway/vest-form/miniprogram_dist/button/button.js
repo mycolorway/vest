@@ -30,6 +30,7 @@ Component({
   },
   methods: {
     onTap: function onTap() {
+      debugger;
       var form = this.getForm();
       if (form) form.submit();
     },

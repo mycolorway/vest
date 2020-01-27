@@ -14,9 +14,22 @@ function template(config) {
   })
 }
 
-function resolvePath() {
+function resolveProjectPath() {
   return gulpReplace(/(["'`])@\//g, function(match, p1) {
     return p1 + (path.relative(this.file.dirname, this.file.base) || '.') + '/'
+  }, {
+    skipBinary: false
+  })
+}
+
+function resolveNodePath({ projectType, projectName }) {
+  return gulpReplace(/(["'`])@@\//g, function(match, p1) {
+    if (projectType === 'miniprogram') {
+      return p1 + (path.relative(this.file.dirname, this.file.base) || '.') + '/miniprogram_npm/'
+    } else if (projectType === 'miniprogram-node-package') {
+      const basePath = projectName.startsWith('@') ? '../../' : '../';
+      return p1 + (path.relative(this.file.dirname, path.resolve(this.file.base, basePath)) || '.') + '/'
+    }
   }, {
     skipBinary: false
   })
@@ -51,6 +64,16 @@ function resolveDependencies(cwd, modulePath = cwd) {
   }, {});
 }
 
+function isNodeModulePath(path) {
+  return !/^(\.|~|@\/|\/|@@\/)/g.test(path);
+}
+
+function isNodeModuleRootPath(path) {
+  const parts = path.split('/');
+  return parts.length === 1 || (parts.length === 2 && parts[0].startsWith('@'));
+}
+
 module.exports = {
-  log, template, resolvePath, sassProjectImporter, resolveDependencies,
+  log, template, resolveProjectPath, resolveNodePath, sassProjectImporter, resolveDependencies,
+  isNodeModulePath, isNodeModuleRootPath,
 }

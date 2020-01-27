@@ -6,7 +6,7 @@ var _behavior = _interopRequireDefault(require("./fieldset/behavior"));
 
 var _behavior2 = _interopRequireDefault(require("./behavior"));
 
-var _vestCore = require("@mycolorway/vest-core");
+var _index = require("../../@mycolorway/vest-core/index");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110,9 +110,9 @@ Component({
     scrollToInput: function scrollToInput(input) {
       var _this2 = this;
 
-      _vestCore.wx.createSelectorQuery().in(input).select('.weui-cell, .form-input').boundingClientRect(function (rect) {
-        _vestCore.wx.createSelectorQuery().selectViewport().scrollOffset(function (result) {
-          _vestCore.wx.pageScrollTo({
+      _index.wx.createSelectorQuery().in(input).select('.weui-cell, .form-input').boundingClientRect(function (rect) {
+        _index.wx.createSelectorQuery().selectViewport().scrollOffset(function (result) {
+          _index.wx.pageScrollTo({
             scrollTop: result.scrollTop + rect.top - _this2.properties.scrollOffset
           });
         }).exec();

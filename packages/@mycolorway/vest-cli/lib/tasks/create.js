@@ -30,9 +30,9 @@ class CreateTasksRegistry extends BaseRegistry {
 
   get templateGlobs() {
     return this._templateGlobs || (() => {
-      const globs = [`templates/${this.config.projectType}/**/*`]
+      const globs = [`templates/${this.config.platform}/${this.config.projectType}/**/*`]
       if (!this.config.useESLint) {
-        globs.push(`!templates/${this.config.projectType}/.eslintrc.js`)
+        globs.push(`!templates/${this.config.platform}/${this.config.projectType}/.eslintrc.js`)
       }
       return globs
     })()

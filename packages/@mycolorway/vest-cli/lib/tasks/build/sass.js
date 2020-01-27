@@ -3,7 +3,7 @@ const gulpRename = require('gulp-rename')
 const gulpReplace = require('gulp-replace')
 const gulpPlumber = require('gulp-plumber')
 const sassPackageImporter = require('node-sass-package-importer')
-const {template, sassProjectImporter, resolvePath} = require('../utils')
+const {template, sassProjectImporter, resolveProjectPath} = require('../utils')
 
 gulpSass.compiler = require('node-sass');
 
@@ -24,7 +24,7 @@ module.exports = function(gulp) {
         ],
         functions: sassConfig.functions
       }))
-      .pipe(resolvePath())
+      .pipe(resolveProjectPath())
       .pipe(gulpReplace(/\/\*=\s+import\s+'(.+)'\s+\*\//g, '@import \'$1\';'))
       .pipe(gulpRename({
         extname: ".wxss"

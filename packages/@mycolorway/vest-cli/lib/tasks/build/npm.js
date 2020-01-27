@@ -7,7 +7,7 @@ const rollupCommonjs = require('rollup-plugin-commonjs')
 const rollupNodeResolve = require('rollup-plugin-node-resolve')
 const gulpBabel = require('gulp-babel')
 const gulpRename = require('gulp-rename')
-const {resolveDependencies} = require('../utils')
+const {resolveDependencies, resolveNodePath} = require('../utils')
 const {getMiniprogramDistPath} = require('../../commands/utils')
 
 module.exports = function(gulp) {
@@ -23,45 +23,21 @@ module.exports = function(gulp) {
 
       const mpDistPath = getMiniprogramDistPath(modulePath)
       if (mpDistPath && fs.existsSync(mpDistPath)) {
-        return gulp.src(path.join(mpDistPath, '**/*'))
-          .pipe(gulp.dest(path.join(this.config.distPath, 'miniprogram_npm', dependencyName)))
-          .on('finish', () => this.log(`finish compiling ${dependencyName} package files.`))
+        return transformMiniprogramPackage({
+          gulp,
+          build: this,
+          name: dependencyName,
+          packagePath: mpDistPath,
+        })
       } else {
-        const dependencyConfig = require(path.resolve(modulePath, 'package.json'))
-        const entryFilePath = require.resolve(path.resolve(modulePath, dependencyConfig.main || 'index.js'))
-
-        if (fs.existsSync(entryFilePath)) {
-          return gulp.src(entryFilePath)
-            .pipe(gulpPlumber())
-            .pipe(gulpRollup({
-              rollup: rollup,
-              external: dependencyNames,
-              plugins: [
-                rollupNodeResolve({
-                  modulesOnly: true
-                }),
-                rollupCommonjs({
-                  sourceMap: false
-                })
-              ]
-            }, {
-              format: 'es'
-            }))
-            .pipe(gulpBabel({
-              rootMode: 'upward',
-              comments: false,
-              compact: true
-            }))
-            .pipe(gulpRename({
-              basename: 'index',
-              extname: '.js'
-            }))
-            .pipe(gulp.dest(path.join(this.config.distPath, 'miniprogram_npm', dependencyName)))
-            .on('finish', () => this.log(`finish compiling ${dependencyName} package files.`))
-        } else {
-          this.log(`finish compiling ${dependencyName} package files.`)
-          done()
-        }
+        return transformNodePackage({
+          gulp,
+          build: this,
+          name: dependencyName,
+          packagePath: modulePath,
+          externals: dependencyNames,
+          done,
+        })
       }
     });
 
@@ -72,4 +48,52 @@ module.exports = function(gulp) {
   gulp.task(`${this.config.name}:npm`, npmTasks.length > 0 ? gulp.parallel(npmTasks) : function(done) {
     done()
   })
+}
+
+function transformMiniprogramPackage({ gulp, build, name, packagePath }) {
+  return gulp.src(path.join(packagePath, '**/*'))
+    .pipe(gulp.dest(path.join(build.config.distPath, 'miniprogram_npm', name)))
+    .on('finish', () => build.log(`finish compiling ${name} package files.`))
+}
+
+function transformNodePackage({ gulp, build, name, packagePath, externals, done}) {
+  const dependencyConfig = require(path.resolve(packagePath, 'package.json'))
+  const entryFilePath = require.resolve(path.resolve(packagePath, dependencyConfig.main || 'index.js'))
+
+  if (fs.existsSync(entryFilePath)) {
+    return gulp.src(entryFilePath)
+      .pipe(gulpPlumber())
+      .pipe(gulpRollup({
+        rollup: rollup,
+        external: externals,
+        plugins: [
+          rollupNodeResolve({
+            modulesOnly: true
+          }),
+          rollupCommonjs({
+            sourceMap: false
+          }),
+        ],
+      }, {
+        format: 'es'
+      }))
+      .pipe(gulpBabel({
+        rootMode: 'upward',
+        comments: false,
+        compact: true
+      }))
+      .pipe(gulpRename({
+        basename: 'index',
+        extname: '.js'
+      }))
+      .pipe(resolveNodePath({
+        projectType: 'miniprogram-node-package',
+        projectName: name,
+      }))
+      .pipe(gulp.dest(path.join(build.config.distPath, 'miniprogram_npm', name)))
+      .on('finish', () => build.log(`finish compiling ${name} package files.`))
+    } else {
+      build.log(`finish compiling ${name} package files.`)
+      done()
+    }
 }

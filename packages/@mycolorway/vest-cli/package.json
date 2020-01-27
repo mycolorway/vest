@@ -35,6 +35,8 @@
     "access": "public"
   },
   "dependencies": {
+    "@babel/helper-module-imports": "^7.8.3",
+    "@rollup/plugin-alias": "^3.0.0",
     "commander": "^2.20.0",
     "del": "^4.1.1",
     "dotenv": "^8.0.0",
@@ -43,6 +45,7 @@
     "gulp-better-rollup": "^4.0.1",
     "gulp-eslint": "^5.0.0",
     "gulp-if": "^2.0.2",
+    "gulp-json-editor": "^2.5.4",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
@@ -51,7 +54,7 @@
     "inquirer": "^6.3.1",
     "jest": "^24.8.0",
     "lodash": "^4.17.15",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "node-sass-package-importer": "^5.3.1",
     "rollup": "^1.11.3",
     "rollup-plugin-commonjs": "^9.3.4",

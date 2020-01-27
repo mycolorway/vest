@@ -139,7 +139,7 @@ var _default = Behavior({
       }
 
       if (this._dataQueue.length === 0) {
-        wx.nextTick(this._flushDataQueue.bind(this));
+        setTimeout(this._flushDataQueue.bind(this));
       }
 
       if (!options.allowComputed) this._filterComputedData(data);

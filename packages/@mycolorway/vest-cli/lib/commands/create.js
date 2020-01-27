@@ -9,6 +9,12 @@ program.command('create <projectName>')
   .action(async (projectName, cmd) => {
     const answers = await inquirer.prompt([{
       type: 'list',
+      name: 'platform',
+      message: 'Select platform:',
+      choices: ['wechat', 'feishu'],
+      default: 'wechat'
+    }, {
+      type: 'list',
       name: 'projectType',
       message: 'Select type of the new vest project:',
       choices: ['miniprogram', 'miniprogram-node-package'],

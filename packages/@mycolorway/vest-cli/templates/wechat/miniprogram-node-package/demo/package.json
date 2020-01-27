@@ -1,0 +1,8 @@
+{
+  "name": "<%= projectName %>-demo",
+	"description": "A demo for development",
+  "private": true,
+  "dependencies": {
+    "@mycolorway/vest-core": "^<%= version %>"
+  }
+}

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _luxon = require("luxon");
+var _index = require("../../../../luxon/index");
 
 var _default = Behavior({
   properties: {
@@ -43,8 +43,8 @@ var _default = Behavior({
     format: function format(value, formatStr) {
       if (!value) return '';
 
-      if (!(value instanceof _luxon.DateTime)) {
-        value = _luxon.DateTime.fromISO(value);
+      if (!(value instanceof _index.DateTime)) {
+        value = _index.DateTime.fromISO(value);
       } // https://github.com/moment/luxon/blob/master/docs/formatting.md#table-of-tokens
 
 

@@ -4,7 +4,7 @@ var _input = _interopRequireDefault(require("../behaviors/input"));
 
 var _date = _interopRequireDefault(require("../behaviors/date"));
 
-var _luxon = require("luxon");
+var _index = require("../../../../luxon/index");
 
 var _utils = require("../../modules/utils");
 
@@ -104,10 +104,10 @@ Component({
       }
     },
     _initCurrentTime: function _initCurrentTime() {
-      var defaultDate = this.data.showEmptyOption ? null : _luxon.DateTime.local().set({
+      var defaultDate = this.data.showEmptyOption ? null : _index.DateTime.local().set({
         second: 0
       });
-      this.currentTime = this.data.value ? _luxon.DateTime.fromISO(this.data.value) : defaultDate;
+      this.currentTime = this.data.value ? _index.DateTime.fromISO(this.data.value) : defaultDate;
     },
     _initRangeItems: function _initRangeItems() {
       var _this = this;
@@ -148,7 +148,7 @@ Component({
           hour = _index$map2[0],
           minute = _index$map2[1];
 
-      return _luxon.DateTime.local().set({
+      return _index.DateTime.local().set({
         hour: hour,
         minute: minute,
         second: 0
