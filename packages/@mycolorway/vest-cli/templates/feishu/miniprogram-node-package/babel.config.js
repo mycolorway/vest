@@ -8,8 +8,6 @@ module.exports = {
     }]
   ],
   plugins: [
-    "@mycolorway/vest-core/src/babel/transform-node-import",
     "@babel/plugin-transform-modules-commonjs",
-    "@mycolorway/vest-core/src/babel/transform-runtime"
   ]
 }

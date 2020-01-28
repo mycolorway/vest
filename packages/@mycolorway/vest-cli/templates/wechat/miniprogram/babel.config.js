@@ -9,6 +9,5 @@ module.exports = {
   ],
   plugins: [
     "@babel/plugin-transform-modules-commonjs",
-    "@mycolorway/vest-core/src/babel/transform-runtime"
   ]
 }

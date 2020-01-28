@@ -1,4 +1,4 @@
-import { wx } from '@/miniprogram_npm/@mycolorway/vest-core'
+import { wx } from '@mycolorway/vest-core'
 
 App({
   onLaunch() {
