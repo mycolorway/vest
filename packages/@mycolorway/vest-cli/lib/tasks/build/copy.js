@@ -22,7 +22,7 @@ module.exports = function(gulp) {
   })
 
   const copyTasks = [`${this.config.name}:copyOtherFiles`]
-  if (this.config.platform === 'feishu') {
+  if (this.config.platform === 'feishu' && this.config.projectType === 'miniprogram') {
     copyTasks.push(`${this.config.name}:copyProjectConfig`);
   }
 
