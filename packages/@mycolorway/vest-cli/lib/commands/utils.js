@@ -14,8 +14,12 @@ function runTask (...tasks) {
 }
 
 function getMiniprogramDistPath(cwd) {
-  const packageConfig = require(path.resolve(cwd, 'package.json'))
-  return path.resolve(cwd, packageConfig.miniprogram || 'miniprogram_dist')
+  const configPath = path.resolve(cwd, 'package.json');
+  if (fs.existsSync(configPath)) {
+    const packageConfig = require(configPath)
+    return path.resolve(cwd, packageConfig.miniprogram || 'miniprogram_dist')
+  }
+  return null;
 }
 
 function getBuildConfig (config) {

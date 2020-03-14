@@ -82,7 +82,8 @@ class BuildTasksRegistry extends BaseRegistry {
 
   get babelGlobs() {
     return this._babelGlobs = this._babelGlobs || [
-      path.join(this.config.srcPath, '**/*.js')
+      path.join(this.config.srcPath, '**/*.js'),
+      '!' + path.join(this.config.srcPath, 'vendor/**/*.js'),
     ]
   }
 

@@ -11,7 +11,14 @@ const {resolveDependencies, resolveNodePath} = require('../utils')
 const {getMiniprogramDistPath} = require('../../commands/utils')
 
 module.exports = function(gulp) {
-  const dependencies = Object.assign(resolveDependencies(this.config.cwd), this.config.extraDependencies)
+  const vendorDependencies = getVendorDependencies(path.resolve(this.config.cwd, 'src/vendor'));
+  const dependencies = Object.assign(
+    resolveDependencies(this.config.cwd, {
+      ignoreDependencies: Object.keys(vendorDependencies),
+    }),
+    vendorDependencies,
+    this.config.extraDependencies
+  );
   const dependencyNames = Object.keys(dependencies)
   const npmTasks = dependencyNames.reduce((result, dependencyName) => {
     const modulePath = dependencies[dependencyName]
@@ -19,7 +26,7 @@ module.exports = function(gulp) {
 
     const taskName = `${this.config.name}:npm-${dependencyName}`
     gulp.task(taskName, (done) => {
-      this.log(`start compiling ${dependencyName} files...`)
+      this.log(`start compiling ${dependencyName} files...`) 
 
       const mpDistPath = getMiniprogramDistPath(modulePath)
       if (mpDistPath && fs.existsSync(mpDistPath)) {
@@ -35,7 +42,7 @@ module.exports = function(gulp) {
           build: this,
           name: dependencyName,
           packagePath: modulePath,
-          externals: dependencyNames,
+          externals: dependencyNames.filter((name) => !vendorDependencies[name]),
           done,
         })
       }
@@ -50,6 +57,16 @@ module.exports = function(gulp) {
   })
 }
 
+function getVendorDependencies(vendorPath) {
+  if (!fs.existsSync(vendorPath)) return {};
+  return fs.readdirSync(vendorPath).reduce((result, file) => {
+    const dependencyPath = path.resolve(vendorPath, file);
+    const dependencyName = path.basename(dependencyPath, '.js');
+    result[dependencyName] = dependencyPath;
+    return result;
+  }, {});
+}
+
 function transformMiniprogramPackage({ gulp, build, name, packagePath }) {
   return gulp.src(path.join(packagePath, '**/*'))
     .pipe(gulp.dest(path.join(build.config.distPath, 'miniprogram_npm', name)))
@@ -57,8 +74,13 @@ function transformMiniprogramPackage({ gulp, build, name, packagePath }) {
 }
 
 function transformNodePackage({ gulp, build, name, packagePath, externals, done}) {
-  const dependencyConfig = require(path.resolve(packagePath, 'package.json'))
-  const entryFilePath = require.resolve(path.resolve(packagePath, dependencyConfig.main || 'index.js'))
+  let entryFilePath;
+  if (fs.statSync(packagePath).isDirectory()) {
+    const dependencyConfig = require(path.resolve(packagePath, 'package.json'))
+    entryFilePath = require.resolve(path.resolve(packagePath, dependencyConfig.main || 'index.js'))
+  } else {
+    entryFilePath = packagePath;
+  }
 
   if (fs.existsSync(entryFilePath)) {
     return gulp.src(entryFilePath)
