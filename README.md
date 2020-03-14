@@ -133,3 +133,12 @@ module.exports = {
 关于 npm 支持，请参考官方文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html
 
 vest 只是对“构建 npm”操作做了自动化处理。
+
+在 `src/vendor` 文件夹里面添加文件可以创建自定义的 node module bundle，例如：
+
+```js
+// src/vendor/date-fns.js
+export { compareAsc } from 'date-fns'
+```
+
+会在 `dist/miniprogram_npm` 里面生成 `date-fns/index.js`，这个 `date-fns` 的包里只包含 `compareAsc` 的内容。
