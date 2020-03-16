@@ -3,4 +3,6 @@ import Store from './store'
 import Component from './component'
 import Behavior from './behavior'
 
-export { wx, Store, Component, Behavior }
+const tt = wx;
+
+export { wx, tt, Store, Component, Behavior }
