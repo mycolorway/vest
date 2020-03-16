@@ -27,6 +27,7 @@ Object.defineProperty(exports, "Behavior", {
     return _behavior.default;
   }
 });
+exports.tt = void 0;
 
 var _wxApi = _interopRequireDefault(require("./wx-api"));
 
@@ -37,3 +38,6 @@ var _component = _interopRequireDefault(require("./component"));
 var _behavior = _interopRequireDefault(require("./behavior"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var tt = _wxApi.default;
+exports.tt = tt;

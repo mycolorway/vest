@@ -15,9 +15,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Watcher =
-/*#__PURE__*/
-function () {
+var Watcher = /*#__PURE__*/function () {
   function Watcher(getter, callback) {
     var _ref = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {},
         _ref$lazy = _ref.lazy,
