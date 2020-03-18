@@ -4,7 +4,7 @@ vest-core 是对小程序官方框架的补充，提供了官方框架缺少的�
 
 ## 微信接口封装
 
-wx-api module 对微信小程序的接口做了封装，让异步接口返回 Promise，配合 [vest](https://github.com/mycolorway/vest) 的 async/await 的语法支持，可以大大简化调用 API 的代码，例如：
+api module 对小程序的接口做了封装，让异步接口返回 Promise，配合 [vest](https://github.com/mycolorway/vest) 的 async/await 的语法支持，可以简化调用 API 的代码，例如：
 
 ```js
 import { wx } from '@mycolorway/vest-core'

@@ -1,6 +1,6 @@
 const noop = () => {}
 
-global.wx = {
+global.tt = global.wx = {
   request: noop,
 
   uploadFile: noop,

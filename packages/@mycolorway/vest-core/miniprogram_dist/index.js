@@ -3,12 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "wx", {
-  enumerable: true,
-  get: function get() {
-    return _wxApi.default;
-  }
-});
+var _exportNames = {
+  Store: true,
+  Component: true,
+  Behavior: true
+};
 Object.defineProperty(exports, "Store", {
   enumerable: true,
   get: function get() {
@@ -27,9 +26,19 @@ Object.defineProperty(exports, "Behavior", {
     return _behavior.default;
   }
 });
-exports.tt = void 0;
 
-var _wxApi = _interopRequireDefault(require("./wx-api"));
+var _api = require("./api");
+
+Object.keys(_api).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _api[key];
+    }
+  });
+});
 
 var _store = _interopRequireDefault(require("./store"));
 
@@ -38,6 +47,3 @@ var _component = _interopRequireDefault(require("./component"));
 var _behavior = _interopRequireDefault(require("./behavior"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var tt = _wxApi.default;
-exports.tt = tt;

@@ -62,6 +62,7 @@ class BuildTasksRegistry extends BaseRegistry {
     return this._copyGlobs = this._copyGlobs || [
       path.join(this.config.srcPath, '**/*'),
       '!' + path.join(this.config.srcPath, '**/*.wxml'),
+      '!' + path.join(this.config.srcPath, '**/*.ttml'),
       '!' + path.join(this.config.srcPath, '**/*.json'),
       '!' + path.join(this.config.srcPath, '**/*.scss'),
       '!' + path.join(this.config.srcPath, '**/*.js')
@@ -77,6 +78,7 @@ class BuildTasksRegistry extends BaseRegistry {
   get templateGlobs() {
     return this._templateGlobs = this._templateGlobs || [
       path.join(this.config.srcPath, '**/*.wxml'),
+      path.join(this.config.srcPath, '**/*.ttml'),
     ]
   }
 

@@ -1,4 +1,4 @@
-import { wx } from '@mycolorway/vest-core'
+import { tt } from '@mycolorway/vest-core'
 
 App({
   onLaunch() {
@@ -6,11 +6,11 @@ App({
   },
 
   checkUpdate() {
-    const updateManager = wx.getUpdateManager()
+    const updateManager = tt.getUpdateManager()
     if (updateManager) {
       updateManager.onCheckForUpdate(res => {
         if (res.hasUpdate) {
-          wx.showLoading({
+          tt.showLoading({
             title: '正在下载新版本',
             mask: true
           })
@@ -22,8 +22,8 @@ App({
       })
 
       updateManager.onUpdateFailed(() => {
-        wx.hideLoading()
-        wx.showModal({
+        tt.hideLoading()
+        tt.showModal({
           title: '新版本下载失败',
           content: '请检查你的网络状况，然后重启小程序。',
           showCancel: false

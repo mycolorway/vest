@@ -1,14 +1,14 @@
 import './utils/mock-api'
-import wx from '../src/wx-api'
+import { tt } from '../src/api'
 
 test('sync api', () => {
-  const systemInfo = wx.getSystemInfoSync()
+  const systemInfo = tt.getSystemInfoSync()
   expect(systemInfo).toHaveProperty('platform')
 })
 
 test('async api', async () => {
   try {
-    const systemInfo = await wx.getSystemInfo()
+    const systemInfo = await tt.getSystemInfo()
     expect(systemInfo).toHaveProperty('platform')
   } catch (e) {
     expect(e).toHaveProperty('info')

@@ -1,6 +1,6 @@
 import './utils/mock-api'
 
-test('wx.getSystemInfoSync', () => {
+test('tt.getSystemInfoSync', () => {
   const {SDKVersion} = wx.getSystemInfoSync()
   expect(SDKVersion).toBe('2.3.0')
 })

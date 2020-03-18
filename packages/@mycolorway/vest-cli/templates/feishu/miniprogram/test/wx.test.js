@@ -1,12 +1,12 @@
 import './utils/mock-api'
-import {wx} from '@mycolorway/vest-core'
+import { tt } from '@mycolorway/vest-core'
 
-test('wx.getSystemInfo', async () => {
-  const {errMsg} = await wx.getSystemInfo()
+test('tt.getSystemInfo', async () => {
+  const {errMsg} = await tt.getSystemInfo()
   expect(errMsg).toBe('getSystemInfo:ok')
 })
 
-test('wx.getSystemInfoSync', async () => {
-  const {SDKVersion} = wx.getSystemInfoSync()
+test('tt.getSystemInfoSync', async () => {
+  const {SDKVersion} = tt.getSystemInfoSync()
   expect(SDKVersion).toBe('2.3.0')
 })

@@ -1,8 +1,4 @@
-import wx from './wx-api'
-import Store from './store'
-import Component from './component'
-import Behavior from './behavior'
-
-const tt = wx;
-
-export { wx, tt, Store, Component, Behavior }
+export * from './api';
+export { default as Store } from './store';
+export { default as Component } from './component';
+export { default as Behavior } from './behavior';
