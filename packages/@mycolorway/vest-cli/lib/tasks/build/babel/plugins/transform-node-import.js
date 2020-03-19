@@ -14,6 +14,28 @@ module.exports = function({ types: t }) {
           )
         }
       },
+
+      ExportAllDeclaration(path, state) {
+        const source = path.node.source.value;
+        
+        if (isNodeModulePath(source)) {
+          const transformedSource = isNodeModuleRootPath(source) ? `${source}/index` : source;
+          path.replaceWith(
+            t.exportAllDeclaration(t.stringLiteral(`@@/${transformedSource}`))
+          )
+        }
+      },
+
+      ExportNamedDeclaration(path, state) {
+        const { specifiers, declaration, source } = path.node;
+        
+        if (source && isNodeModulePath(source.value)) {
+          const transformedSource = isNodeModuleRootPath(source.value) ? `${source.value}/index` : source.value;
+          path.replaceWith(
+            t.exportNamedDeclaration(declaration, specifiers, t.stringLiteral(`@@/${transformedSource}`))
+          )
+        }
+      },
     },
   };
 };
