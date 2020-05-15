@@ -66,7 +66,7 @@ function resolveDependencies(cwd, { modulePath = cwd, ignoreDependencies = [] } 
 }
 
 function isNodeModulePath(path) {
-  return !/^(\.|~|@\/|\/|@@\/)/g.test(path);
+  return !/^(\.|~|@\/|\/|@@\/|plugin:\/\/)/g.test(path);
 }
 
 function isNodeModuleRootPath(path) {
