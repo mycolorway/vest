@@ -1,6 +1,6 @@
 {
 	"name": "@mycolorway/vest-core",
-	"version": "1.0.0-beta.19",
+	"version": "1.0.0-beta.20",
 	"description": "Some missing modules for wechat miniprogram development.",
 	"main": "miniprogram_dist/index.js",
 	"scripts": {
@@ -23,10 +23,10 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@babel/core": "^7.5.5",
-		"@babel/plugin-transform-modules-commonjs": "^7.5.0",
-		"@babel/preset-env": "^7.5.5",
+		"@babel/core": "^7.10.5",
+		"@babel/plugin-transform-modules-commonjs": "^7.10.4",
+		"@babel/preset-env": "^7.10.4",
 		"@mycolorway/weui-wxss": "^1.1.1",
-		"regenerator-runtime": "0.13.1"
+		"regenerator-runtime": "0.13.5"
 	}
 }

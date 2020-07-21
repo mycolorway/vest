@@ -1,6 +1,6 @@
 {
   "name": "@mycolorway/vest-cli",
-  "version": "1.0.0-beta.19",
+  "version": "1.0.0-beta.20",
   "description": "A lightweight tool to improve wechat miniprogram development experience.",
   "main": "index.js",
   "bin": {
@@ -40,7 +40,7 @@
     "commander": "^2.20.0",
     "del": "^4.1.1",
     "dotenv": "^8.0.0",
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-better-rollup": "^4.0.1",
     "gulp-eslint": "^6.0.0",
@@ -53,7 +53,7 @@
     "gulp-template": "^5.0.0",
     "inquirer": "^6.3.1",
     "jest": "^25.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "node-sass": "^4.13.1",
     "node-sass-package-importer": "^5.3.1",
     "rollup": "^1.11.3",
