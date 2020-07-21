@@ -67,6 +67,7 @@ var _default = Behavior({
           var _watches$key = watches[key];
           callback = _watches$key.handler;
           options = _objectWithoutProperties(_watches$key, ["handler"]);
+          _watches$key;
         }
 
         result[key] = _this.watch(key, callback, options);
