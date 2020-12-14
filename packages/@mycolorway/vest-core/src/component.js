@@ -7,13 +7,16 @@ export function addDefaultBehavior(...behaviors) {
   defaultBehaviors.push(...behaviors);
 }
 
-export default function (config) {
+export default function ({ store, ...config }) {
   config.behaviors = (config.behaviors || []).concat([...defaultBehaviors, reactivityBehavior])
-  const { store } = getApp();
-  config.store = config.store || (typeof store === 'function' ? store() : store);
 
   const initStore = function() {
-    this.store = config.store
+    if (!store){
+      store = getApp().store;
+      store = typeof store === 'function' ? store() : store;
+    }
+
+    this.store = store;
   }
 
   if (config.lifetimes && config.lifetimes.created) {
