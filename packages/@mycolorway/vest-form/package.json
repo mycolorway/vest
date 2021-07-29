@@ -1,7 +1,7 @@
 {
   "name": "@mycolorway/vest-form",
   "description": "A miniprogram form component based on vest.",
-  "version": "1.0.1-beta.0",
+  "version": "1.0.1-beta2",
   "main": "miniprogram_dist/index.js",
   "scripts": {
     "dev": "vest dev",
