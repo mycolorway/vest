@@ -2,6 +2,9 @@ const WX = {
   _origin: wx,
   qy: {
     _origin: wx.qy
+  },
+  tt: {
+    _origin: tt
   }
 }
 
@@ -48,6 +51,8 @@ const wechatSyncApis = [
 
 const weworkSyncApis = []
 
+const ttSyncApis = []
+
 class WxCallError extends Error {
   constructor(name, res) {
     super(`wx.${name} 调用失败`)
@@ -78,6 +83,7 @@ function proxyAPI(from, to, excludeApis) {
 const api = (() => {
   proxyAPI(wx, WX, wechatSyncApis)
   if (wx.qy) proxyAPI(wx.qy, WX.qy, weworkSyncApis)
+  if (tt) proxyAPI(tt, WX.tt, ttSyncApis)
   return WX
 })()
 
