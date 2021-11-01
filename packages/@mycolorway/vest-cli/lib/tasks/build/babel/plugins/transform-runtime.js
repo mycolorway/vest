@@ -30,14 +30,14 @@ module.exports = function({ types }) {
     visitor: {
       ReferencedIdentifier(path) {
         const { node, parent, scope } = path
-        // if (node.name === 'regeneratorRuntime') {
-        //   path.replaceWith(
-        //     this.addDefaultImport(
-        //       'regenerator-runtime',
-        //       'regeneratorRuntime',
-        //     ),
-        //   )
-        // }
+        if (node.name === 'regeneratorRuntime') {
+          path.replaceWith(
+            this.addDefaultImport(
+              'regenerator-runtime',
+              'regeneratorRuntime',
+            ),
+          )
+        }
       }
     }
   }

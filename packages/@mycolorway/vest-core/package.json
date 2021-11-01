@@ -1,6 +1,6 @@
 {
 	"name": "@mycolorway/vest-core",
-	"version": "1.0.1",
+	"version": "1.0.2-1.0.2-alpha.1.0",
 	"description": "Some missing modules for wechat miniprogram development.",
 	"main": "miniprogram_dist/index.js",
 	"scripts": {
