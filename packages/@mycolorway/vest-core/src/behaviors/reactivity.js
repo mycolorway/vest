@@ -51,8 +51,16 @@ export default Behavior({
     }, defFields.lifetimes.attached)
 
     defFields.lifetimes.detached = mergeLifecycleMethod(function() {
-      computedKeys.forEach(key => this.computed[key].teardown())
-      watchesKeys.forEach(key => this.watches[key].teardown())
+      computedKeys.forEach(key => {
+        if (this.computed) {
+          return this.computed[key].teardown()
+        }
+      })
+      watchesKeys.forEach(key => {
+        if (this.computed) {
+          this.watches[key].teardown()
+        }
+      })
       this.computed = {}
       this.watches = {}
     }, defFields.lifetimes.detached)
