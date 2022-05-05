@@ -25,5 +25,6 @@
   "dependencies": {
     "@mycolorway/vest-core": "^1.0.3",
     "luxon": "^1.4.3"
-  }
+  },
+  "gitHead": "b9e3f25d1fc77e806bf9f6341f7165828a027098"
 }

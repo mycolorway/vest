@@ -60,5 +60,6 @@
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3",
     "undertaker-registry": "^1.0.1"
-  }
+  },
+  "gitHead": "b9e3f25d1fc77e806bf9f6341f7165828a027098"
 }
